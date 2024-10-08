@@ -5,9 +5,9 @@
 
 
 const user = {
-    name: 'Alice',
-    age: 30,
-    city: 'Wonderland'
+    name: 'Abdullah',
+    age: 15,
+    country: 'Pakistan'
 };
 
 const userCard = `
