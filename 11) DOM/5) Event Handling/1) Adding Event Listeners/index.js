@@ -20,3 +20,8 @@ button.addEventListener("click", () => {
        i = 0;
         para.textContent = ``;
     })
+//! Using function parameter in events
+const test =  document.querySelector('#test');
+test.addEventListener("click",function Test(event) {
+    console.log(event)
+})
