@@ -1,6 +1,6 @@
 function create() {
   var container = document.querySelector(".container");
-  const input = document.querySelector("#main_text").value;
+  var input = document.querySelector("#main_text").value;
   var separation = document.querySelector(".separation");
   var completed = document.querySelector(".completed");
 
