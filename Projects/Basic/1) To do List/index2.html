@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Preserve Element State</title>
+</head>
+<body>
+    <input type="text" id="myInput" placeholder="Type something...">
+    <button onclick="saveData()">Save</button>
+
+    <script>
+        // Function to save data to localStorage
+        function saveData() {
+            var input = document.getElementById("myInput").value;
+            localStorage.setItem("inputValue", input);
+        }
+
+        // Function to load data from localStorage
+        function loadData() {
+            var savedInput = localStorage.getItem("inputValue");
+            if (savedInput) {
+                document.getElementById("myInput").value = savedInput;
+            }
+        }
+
+        // Load data when the page loads
+        window.onload = loadData;
+    </script>
+</body>
+</html>
