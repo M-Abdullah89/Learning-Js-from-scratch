@@ -1,26 +1,38 @@
-const inputValue = document.querySelector(".Write-input").value;
-const button = document.querySelector(".add-btn");
-const result = document.querySelector(".result");
-const container = document.querySelector(".container");
-
-var checkbox1 = document.querySelector(".checkbox1");
-
-button.addEventListener("click", (e) => {
-  e.preventDefault();
-  let inputValue = document.querySelector(".Write-input").value;
-  if (inputValue == "") {
+function create() {
+  var container = document.querySelector(".container");
+  var input = document.querySelector("#main_text").value;
+  if (input == "") {
+    //! if the entered string is empty then nothing will happen
   } else {
-    const res2 = result.cloneNode(true);
-    res2.childNodes[5].innerText = inputValue;
-    container.appendChild(res2);
-    document.querySelector(".Write-input").value = "";
-  }
-});
+    //! Parent Element res (for result)
+    var res = document.createElement("div");
+    res.classList.add("res");
+    res.id = "res";
+    const text = document.createElement("div");
+    text.classList.add("text");
+    text.innerText = input;
+    res.appendChild(text);
+    var buttons = document.createElement("div");
+    var delete1 = document.createElement("button");
+    //! creating X button
+    delete1.innerText = "✗";
+    delete1.classList.add("delete1");
+    //! Creating ✓ button
+    var checked = document.createElement("button");
+    checked.innerHTML = "✓";
+    checked.classList.add("checked");
+    buttons.appendChild(delete1);
+    buttons.appendChild(checked);
+    res.appendChild(buttons);
+    container.appendChild(res);
+    //! To delete res on  click of X
 
-checkbox1.addEventListener('change', (e) => {
-  if (e.target.checked) {
-    console.log('Checkbox is checked');
-} else {
-    console.log('Checkbox is not checked');
+    delete1.addEventListener("click", () => {
+      res.remove();
+    });
+    //! to add & remove textdecoration on click of button
+    checked.addEventListener("click", () => {
+      text.classList.toggle("text2");
+    });
+  }
 }
-});

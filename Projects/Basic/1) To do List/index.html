@@ -3,27 +3,21 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>To Do App</title>
+    <title>Document</title>
     <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
   </head>
   <body>
     <div class="container">
-      <h1>To Do App</h1>
-      <form>
-        <input
-          type="text"
-          class="Write-input"
-          placeholder="What are your tasks?"
-        />
-        <button class="add-btn">Add</button>
-      </form>
-      <div class="result">
-        <input type="checkbox" name="checkbox1" id="checkbox1" checked/>
-        <label for="checkbox1" class="checkbox1">✓</label>
-        <span class="mainText">This is a dummy text</span>
-        <p class="delete">✗</p>
-      </div>
+      <h1>To Do </h1>
+      <input type="text" id="main_text" placeholder="What to Do?" />
+      <button id="button" onclick="create()">Add</button>
+
     </div>
+
     <script src="index.js"></script>
   </body>
 </html>
