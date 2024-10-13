@@ -1,10 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 body {
-  background-color: rgb(37, 37, 37);
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  background: #0b0d15;
 }
 * {
   padding: 0;
@@ -12,16 +8,25 @@ body {
   box-sizing: border-box;
 }
 .container {
-  border: 2px solid rgb(51, 51, 51);
+  position: absolute;
+  border: 2px solid rgb(34, 29, 29);
   padding: 50px;
   box-shadow: 0px 0px 110px rgb(0, 178, 223);
   height: auto;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
 }
-h1{
+
+h1 {
   font-family: Poppins;
   color: rgb(0, 178, 223);
   align-self: center;
   text-align: center;
+}
+form {
+  display: inline-flex;
+  gap: 10px;
 }
 #main_text {
   all: unset;
@@ -32,6 +37,7 @@ h1{
   font-size: x-large;
   color: white;
   padding: 10px;
+  max-width: 100%;
 }
 #button {
   all: unset;
@@ -74,22 +80,38 @@ h1{
   padding: 10px;
   font-weight: bolder;
   font-family: Arial;
-  transition: 0.2s;
+  transition: all 0.3s ease-in-out;
 }
-.delete1:hover {
-  color: red;
+.svg-button svg {
+  scale: 1.4;
+  transform: translateY(2px);
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+.svg-button svg:hover {
+  fill: #ff0000;
 }
 .checked {
   all: unset;
+  border: 2px solid rgb(0, 178, 223);
+  border-radius: 50%;
+  min-height: 20px;
+  min-width: 20px;
+  flex-shrink: 0;
   font-size: x-large;
-  padding: 10px;
   font-weight: bolder;
   font-family: Arial;
   transition: 0.2s;
+  padding: 0 7px;
+  background: #0b0d15;
+  color: #0b0d15;
 }
-.checked:hover {
-  color: lime;
+
+.checked2 {
+  background-color: rgb(0, 178, 223);
+  color: white;
 }
+
 .text,
 .text2 {
   margin: 10px;
@@ -104,4 +126,26 @@ h1{
   transition: all 0.2s ease-in-out;
   cursor: pointer;
   user-select: none;
+}
+@media only screen and (max-width: 500px) {
+  .container {
+    width: 90vw;
+  }
+  form {
+    display: block;
+  }
+  #main_text {
+    width: 100%;
+  }
+  #button {
+    width: 105%;
+    display: inline;
+    text-align: center;
+    margin: 20px auto;
+  }
+  .res {
+    width: auto;
+    overflow-x: auto;
+    text-overflow: clip;
+  }
 }
