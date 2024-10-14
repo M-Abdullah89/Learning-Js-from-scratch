@@ -44,5 +44,6 @@ form.addEventListener("submit", (e) => {
       text.classList.toggle("text2");
       checked.classList.toggle("checked2")
     });
+    
   }
 });

@@ -16,6 +16,7 @@ body {
   top: 50%;
   left: 50%;
   translate: -50% -50%;
+  width: auto;
 }
 
 h1 {
@@ -25,7 +26,7 @@ h1 {
   text-align: center;
 }
 form {
-  display: inline-flex;
+  display: flex;
   gap: 10px;
 }
 #main_text {
@@ -37,7 +38,7 @@ form {
   font-size: x-large;
   color: white;
   padding: 10px;
-  max-width: 100%;
+  width: 100%;
 }
 #button {
   all: unset;
@@ -69,6 +70,17 @@ form {
   justify-content: space-between;
   align-items: center;
   transition: all 0.5s ease-in-out;
+  text-overflow: ellipsis;
+  overflow-x: auto;
+  width: 50vw;
+}
+::-webkit-scrollbar-thumb {
+  background: rgb(0, 178, 223);
+  border-radius: 1000px;
+}
+::-webkit-scrollbar {
+  width: 1px;
+  height: 3px;
 }
 .text {
   font-family: Arial, Helvetica, sans-serif;
@@ -88,9 +100,10 @@ form {
   cursor: pointer;
   transition: all 0.3s ease-in-out;
 }
-.svg-button svg:hover {
+.svg-button svg:hover,.svg-button svg:focus,.svg-button svg:active {
   fill: #ff0000;
 }
+
 .checked {
   all: unset;
   border: 2px solid rgb(0, 178, 223);
@@ -144,6 +157,7 @@ form {
     margin: 20px auto;
   }
   .res {
+    max-width: 100%;
     width: auto;
     overflow-x: auto;
     text-overflow: clip;
