@@ -1,8 +1,6 @@
 //! A DocumentFragment is a lightweight container used to hold and manipulate a group of DOM nodes.
 //? It’s not part of the main DOM tree, which means changes made to it don’t affect the document until it’s appended to the DOM. 
 //?This makes it useful for batch operations, improving performance by reducing reflows and repaints.
-//? Reduces the number of reflows and repaints by batching DOM updates
-//? Changes to a DocumentFragment don’t affect the live DOM until it’s appended
 
 // Create a DocumentFragment
 let fragment = document.createDocumentFragment();
@@ -11,11 +9,11 @@ let fragment = document.createDocumentFragment();
 let items = ['Item 1', 'Item 2', 'Item 3'];
 
 // Create and append list items to the fragment
-items.forEach((value,) => {
+
+items.forEach((value) => {
     let li = document.createElement('li');
   li.textContent = value;
   fragment.appendChild(li);
-
 })
 
 // Append the fragment to the DOM
